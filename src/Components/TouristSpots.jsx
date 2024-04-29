@@ -1,5 +1,5 @@
 
-import { useContext,  } from "react";
+import { useContext, useEffect,  } from "react";
 import { DataContext } from '../Provider/DataContextProvider';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
@@ -7,6 +7,13 @@ AOS.init();
 const TouristSpots = () => {
     const data = useContext(DataContext)
     // console.log(data);
+    useEffect(() => {
+        fetch("https://raw.githubusercontent.com/mk-munna/Luxy-Realty-Api/main/estates.json")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }, [])
 
     return (
         <div id='estate' className="mt-[70px] px-8 lg:px-0">

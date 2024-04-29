@@ -3,16 +3,18 @@ import PropTypes from 'prop-types'
 export const DataContext = createContext(null)
 const DataContextProvider = ({children}) => {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
-        // fetch("https://raw.githubusercontent.com/mk-munna/Luxy-Realty-Api/main/TouristSpots.json")
-        fetch("../../public/TouristSpots.json")
-            .then((res) => res.json())
-            .then((data) => {
-                setData(data);
-            });
+        fetch('http://localhost:5000/tourist-spots')
+            .then(res => res.json())
+            .then(data => {
+                setData(data)
+                setLoading(false)
+            })
     }, [])
+    const dataInfo = {loading, data}
     return (
-        <DataContext.Provider value={data}>
+        <DataContext.Provider value={dataInfo}>
             {children}
         </DataContext.Provider>
     );

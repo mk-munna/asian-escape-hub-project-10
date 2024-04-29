@@ -6,7 +6,7 @@ import { IoIosLogOut } from "react-icons/io";
 import { RiBuilding2Line } from "react-icons/ri";
 import { TbBuildingWarehouse } from "react-icons/tb";
 import { IoHomeOutline } from "react-icons/io5";
-import { LuMails } from "react-icons/lu";
+import { LuMails, LuPlus } from "react-icons/lu";
 
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
@@ -23,18 +23,18 @@ import { CiLight } from "react-icons/ci";
 const Nav = () => {
     const themeFromLocalStorage = localStorage.getItem("theme")
     const [theme, setTheme] = useState(themeFromLocalStorage);
-    console.log(theme);
+    // console.log(theme);
     const { user, loading } = useContext(AuthContext)
     const [myValue, setMyValue] = useState('');
-    console.log(myValue);
+    // console.log(myValue);
     useEffect(() => {
         if (theme) {
             // save theme to local storage
             localStorage.setItem("theme", "true");
-            document.querySelector("body").setAttribute("data-theme", "dark");
+            document.querySelector("html").setAttribute("data-theme", "dark");
         } else {
             localStorage.removeItem("theme");
-            document.querySelector("body").setAttribute("data-theme", "light");
+            document.querySelector("html").setAttribute("data-theme", "light");
         }
     }, [theme])
     const handleClick = () => {
@@ -155,7 +155,8 @@ const Nav = () => {
                             </div>
                             <ul tabIndex={0} className="menu flex flex-col gap-4 menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                 <NavLink to={'/'} className={"flex items-center gap-2"}><IoHomeOutline />Home</NavLink>
-                                <a href="#estate" className={"flex items-center gap-2"}><RiBuilding2Line />All Tourist Spot</a>
+                                <NavLink to={'/tourist-spots'} className={"flex items-center gap-2"}><RiBuilding2Line />All Tourist Spot</NavLink>
+                                <NavLink to={'/Add-new-Tourist-spot'} className={"flex items-center gap-2"}><LuPlus />Add Tourist Spot</NavLink>
                                 <NavLink to={'/contact'} className={"flex items-center gap-2"}><TbBuildingWarehouse />Contact</NavLink>
                                 <NavLink to={'/sign-up'} className={"flex items-center gap-2"}><FaRegUserCircle></FaRegUserCircle>Register</NavLink>
                                 <NavLink to={'/login'} className={"flex items-center gap-2"}><FaRegUser />Login</NavLink>
@@ -165,8 +166,8 @@ const Nav = () => {
                     <div className="w-3/4 hidden text-white lg:flex">
                         <ul className="menu menu-horizontal px-1 gap-8 text-base">
                             <NavLink to={'/'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><IoHomeOutline />Home</NavLink>
-                            <a href="#estate" className={"flex items-center gap-2"}><RiBuilding2Line />All Tourist Spot</a>
-                            <NavLink to={'/contact'} className={"flex items-center gap-2"}><TbBuildingWarehouse />Add Tourist Spot</NavLink>
+                            <NavLink to={'/tourist-spots'} className={"flex items-center gap-2"}><RiBuilding2Line />All Tourist Spot</NavLink>
+                            <NavLink to={'/Add-new-Tourist-spot'} className={"flex items-center gap-2"}><LuPlus />Add Tourist Spot</NavLink>
                             <NavLink to={'/contact'} className={"flex items-center gap-2"}><TbBuildingWarehouse />Contact</NavLink>
                             <NavLink to={'/sign-up'} className={"flex items-center gap-2 hover:bg-none hover:border-b border-[#ffff00] pb-1"}><FaRegUserCircle></FaRegUserCircle>Register</NavLink>
                             <NavLink to={'/login'} className={"flex items-center gap-2"}><FaRegUser />Login</NavLink>
@@ -175,7 +176,7 @@ const Nav = () => {
                     <div className="w-1/4 flex-grow flex justify-end">
                         <div className="flex items-center  gap-2  text-white">
                             <LuMails />
-                            <span className="">mkmunna@gmail.com</span>
+                            <span className="">mkmunna@yahoo.com</span>
                         </div>
                     </div>
                 </div>

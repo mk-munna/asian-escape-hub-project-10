@@ -7,13 +7,14 @@ import Home from './Pages/Home/Home.jsx'
 import Login from './Pages/Login/Login.jsx'
 import SignUp from './Pages/SignUp/SignUp.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import DataContextProvider from './Provider/DataContextProvider.jsx'
-import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx'
+// import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx'
 import AuthContextProvider from './Provider/AuthContextProvider.jsx'
 import PrivateRoute from './PrivateRoutes/PrivateRoute.jsx'
 import { HelmetProvider } from 'react-helmet-async'
 import Contact from './Pages/ContactUs/Contact.jsx'
-// import { AuthContext } from './Provider/AuthContextProvider.jsx'
+import AddTouristSpot from './Pages/AddTouristSpot/AddTouristSpot.jsx'
+import AllTouristSpot from './Pages/AllTouristSpot/AllTouristSpot.jsx'
+import DataContextProvider from './Provider/DataContextProvider.jsx'
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,14 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
+        path: '/Add-new-Tourist-spot',
+        element: <PrivateRoute><AddTouristSpot></AddTouristSpot></PrivateRoute>
+      },
+      {
+        path: '/tourist-spots',
+        element: <AllTouristSpot></AllTouristSpot>
+      },
+      {
         path: '/login',
         element: <Login></Login>
       },
@@ -34,10 +43,10 @@ const router = createBrowserRouter([
         path: '/sign-up',
         element: <SignUp></SignUp>
       },
-      {
-        path: '/estate/:id',
-        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
-      },
+      // {
+      //   path: '/estate/:id',
+      //   element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
+      // },
       {
         path: '/contact',
         element: <PrivateRoute><Contact></Contact></PrivateRoute>

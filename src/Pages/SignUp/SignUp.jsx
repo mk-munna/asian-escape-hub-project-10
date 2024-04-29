@@ -150,8 +150,6 @@ const SignUp = () => {
             toast.error('Passwords do not match')
         }
     }
-
-
     return (
         <div className="max-w-[350px] md:max-w-screen-sm my-20 lg:max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 justify-evenly">
             <Helmet>
