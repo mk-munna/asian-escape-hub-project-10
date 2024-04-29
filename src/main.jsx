@@ -15,6 +15,7 @@ import Contact from './Pages/ContactUs/Contact.jsx'
 import AddTouristSpot from './Pages/AddTouristSpot/AddTouristSpot.jsx'
 import AllTouristSpot from './Pages/AllTouristSpot/AllTouristSpot.jsx'
 import DataContextProvider from './Provider/DataContextProvider.jsx'
+import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx'
 
 
 const router = createBrowserRouter([
@@ -43,10 +44,10 @@ const router = createBrowserRouter([
         path: '/sign-up',
         element: <SignUp></SignUp>
       },
-      // {
-      //   path: '/estate/:id',
-      //   element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
-      // },
+      {
+        path: '//tourist-spot/:id',
+        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
+      },
       {
         path: '/contact',
         element: <PrivateRoute><Contact></Contact></PrivateRoute>

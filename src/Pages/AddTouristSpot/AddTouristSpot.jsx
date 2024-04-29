@@ -65,7 +65,7 @@ const AddTouristSpot = () => {
                         </div>
                         <div className='grow w-full'>
                             <label className='font-OpenSans text-sm  block mb-2 text font-medium'> Average Cost ($)<span className='text-red-500'> *</span></label>
-                            <input required name='averageCost' type='text' placeholder='$100' className=' border border-primary px-6 py-[10px] rounded-md focus:outline-none w-full text-primary' />
+                            <input required name='averageCost' type='number' placeholder='170' className=' border border-primary px-6 py-[10px] rounded-md focus:outline-none w-full text-primary' />
                         </div>
 
                     </div>

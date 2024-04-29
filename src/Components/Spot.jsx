@@ -39,7 +39,7 @@ const Spot = ({ spot }) => {
                     </p>
                     <p className='flex items-center'>
                         <span className='text-primary'><FaCircleDollarToSlot></FaCircleDollarToSlot></span>
-                        <span className=' px-2 py-[2px] text-sm font-Outfit rounded-md'>Average Cost <span className='text-xl text-[#F7921E]'>&nbsp;{average_cost}</span></span>
+                        <span className=' px-2 py-[2px] text-sm font-Outfit rounded-md'>Average Cost <span className='text-xl text-[#F7921E]'>&nbsp;${average_cost}</span></span>
                     </p>
                     <hr className='my-3' />
                     <div className='flex'>
