@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../Provider/DataContextProvider';
 import { AuthContext } from '../../Provider/AuthContextProvider';
 import Swal from 'sweetalert2';
+import { MdOutlineDeleteOutline } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const MyList = () => {
     const { data, setReloadAfterDelete } = useContext(DataContext)
@@ -80,8 +82,10 @@ const MyList = () => {
                                                 <td>{spot.location}</td>
                                                 <td>${spot.average_cost}</td>
                                                 <td>{spot.travel_time}</td>
-                                                <td><button className='bg-primary text-white text-[12px] px-2 py-[2px] rounded-[4px]'>Update</button></td>
-                                                <td><button onClick={()=>handleDelete(spot._id)}  className='bg-Common px-3 rounded-[4px]'>X</button></td>
+                                                <td>
+                                                    <Link to={`/update/${spot._id}`}><button className='bg-primary text-white text-[12px] px-2 py-[2px] rounded-[4px]'>Update</button></Link>
+                                                </td>
+                                                <td><button onClick={() => handleDelete(spot._id)} className='bg-[#dbfde8] px-2 py-[2px] rounded-[4px]'><MdOutlineDeleteOutline className='text-xl '/></button></td>
                                             </tr>
                                         )
                                     })

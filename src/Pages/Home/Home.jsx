@@ -6,7 +6,7 @@ import WhyChooseUs from "../../Components/WhyChooseUs";
 import Discounts2 from "../../Components/Discounts2";
 import { useContext } from "react";
 import { DataContext } from "../../Provider/DataContextProvider";
-// import Explore from "../../Components/Explore";
+import Country from "../../Components/Country";
 
 const Home = () => {
 const {theme} = useContext(DataContext)
@@ -19,7 +19,7 @@ const {theme} = useContext(DataContext)
             <WhyChooseUs></WhyChooseUs>
             <TouristSpots></TouristSpots>
             <Discounts2></Discounts2>
-            {/* <Explore></Explore> */}
+            <Country></Country>
         </div>
     );
 };

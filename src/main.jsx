@@ -17,6 +17,7 @@ import AllTouristSpot from './Pages/AllTouristSpot/AllTouristSpot.jsx'
 import DataContextProvider from './Provider/DataContextProvider.jsx'
 import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx'
 import MyList from './Pages/MyList/MyList.jsx'
+import UpdateTouristSpot from './Pages/UpdateTouristSpot/UpdateTouristSpot.jsx'
 
 
 const router = createBrowserRouter([
@@ -38,12 +39,20 @@ const router = createBrowserRouter([
         element: <AllTouristSpot></AllTouristSpot>
       },
       {
+        path: '/tourist-spots',
+        element: <AllTouristSpot></AllTouristSpot>
+      },
+      {
         path: '/login',
         element: <Login></Login>
       },
       {
         path: '/sign-up',
         element: <SignUp></SignUp>
+      },
+      {
+        path: '//update/:id',
+        element: <PrivateRoute><UpdateTouristSpot/></PrivateRoute>
       },
       {
         path: '//tourist-spot/:id',
