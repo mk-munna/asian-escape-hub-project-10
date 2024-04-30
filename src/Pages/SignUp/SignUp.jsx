@@ -251,7 +251,7 @@ const SignUp = () => {
                     </div>
                     <button
                         disabled={!agree || passwordError}
-                        className="mt-6 block bg-primary disabled:bg-[#9fdf96] w-full select-none rounded-lg py-2 text-white"
+                        className="mt-6 block bg-primary disabled:bg-[#6c9e89] w-full select-none rounded-lg py-2 text-white"
                     >
                         Sign up
                     </button>

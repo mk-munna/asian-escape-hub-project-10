@@ -18,6 +18,7 @@ import DataContextProvider from './Provider/DataContextProvider.jsx'
 import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx'
 import MyList from './Pages/MyList/MyList.jsx'
 import UpdateTouristSpot from './Pages/UpdateTouristSpot/UpdateTouristSpot.jsx'
+import CountryDataPage from './Pages/CountryDataPage/CountryDataPage.jsx'
 
 
 const router = createBrowserRouter([
@@ -39,8 +40,8 @@ const router = createBrowserRouter([
         element: <AllTouristSpot></AllTouristSpot>
       },
       {
-        path: '/tourist-spots',
-        element: <AllTouristSpot></AllTouristSpot>
+        path: '/tourist-spot-of-a-country/:country',
+        element: <CountryDataPage></CountryDataPage>
       },
       {
         path: '/login',
