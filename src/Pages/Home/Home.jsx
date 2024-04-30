@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Banner from "../../Components/Banner";
 import { useEffect } from "react";
 import TouristSpots from "../../Components/TouristSpots";
+import WhyChooseUs from "../../Components/WhyChooseUs";
 // import Discounts2 from "../../Components/Discounts2";
 // import Explore from "../../Components/Explore";
 
@@ -20,6 +21,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <TouristSpots></TouristSpots>
+            <WhyChooseUs></WhyChooseUs>
             {/* <Discounts2></Discounts2> */}
             {/* <Explore></Explore> */}
         </div>
