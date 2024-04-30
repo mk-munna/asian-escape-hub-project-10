@@ -5,7 +5,22 @@ import Spot from '../../Components/Spot';
 import { IoMdArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
+import { Typewriter } from 'react-simple-typewriter'
+
+
 const AllTouristSpot = () => {
+
+    const handleType = (count) => {
+        // access word count number
+        console.log(count)
+    }
+
+const handleDone = () => {
+    console.log(`Done after 5 loops!`)
+}
+
+
+
     const { data, loading } = useContext(DataContext)
     const [sortOption, setSortOption] = useState('')
     const [sortedData, setSortedData] = useState([])
@@ -25,6 +40,7 @@ const AllTouristSpot = () => {
                     <title>Asian Escape Hub | Tourist spots</title>
                 </Helmet>
             </div>
+            
             <Link to={'/'}><button className='flex items-center gap-3 mb-8 border-yellow-400 py-1 border-b text-primary'><IoMdArrowBack />Back To Home</button></Link>
             <h1 className='text-4xl mb-8 font-Montserrat font-semibold'>Visit & enjoy adventure life <br /> with full of dreams</h1>
             <p className='mb-8 leading-6'>Embark on an exhilarating journey filled with excitement and wonder! Experience the thrill of adventure and the joy of discovery as you explore new horizons and make unforgettable memories. Join us for an adventure-packed escapade where every moment is infused with the magic of possibility. Come, fulfill your dreams and embrace the spirit of adventure with us!</p>

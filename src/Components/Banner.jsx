@@ -8,7 +8,22 @@ import 'swiper/css/navigation';
 import { Parallax, Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { BiBuildingHouse } from 'react-icons/bi';
 import { GoArrowRight } from 'react-icons/go';
+
+import { Typewriter } from 'react-simple-typewriter'
+
 const Banner = () => {
+
+    const handleType = (count) => {
+        // access word count number
+        console.log(count)
+    }
+
+    const handleDone = () => {
+        console.log(`Done after 5 loops!`)
+    }
+
+
+
     return (
         <div className='text-white'>
             <Swiper
@@ -39,7 +54,26 @@ const Banner = () => {
                         className='flex flex-col h-[400px] justify-center lg:h-[500px]'>
                         <div className='px-8'>
                             <div className="font-Montserrat  text-3xl md:text-6xl lg:text-7xl" data-swiper-parallax="-300">
-                            <span className='font-extrabold'>Thailand</span> Last Minute
+        
+                                <div className='App'>
+                                    <h1 style={{ paddingTop: '5rem', margin: 'auto 0', fontWeight: 'normal' }}>
+                                        Thailand{' '}
+                                        <span style={{ color: 'red', fontWeight: 'bold' }}>
+                                            {/* Style will be inherited from the parent element */}
+                                            <Typewriter
+                                                words={['Trip', 'Travel', 'Explore', 'Know!']}
+                                                loop={5}
+                                                cursor
+                                                cursorStyle=''
+                                                typeSpeed={70}
+                                                deleteSpeed={50}
+                                                delaySpeed={1000}
+                                                onLoopDone={handleDone}
+                                                onType={handleType}
+                                            />
+                                        </span>
+                                    </h1>
+                                </div>
                         </div>
                         <div className="text-sm font-Outfit mt-8" data-swiper-parallax="-200">
                                 Vibrant cities, serene beaches, rich culture,br and warm hospitality. <br /> Your gateway to unforgettable experiences!
@@ -59,7 +93,25 @@ const Banner = () => {
                     }} className='flex flex-col justify-center h-[400px] lg:h-[500px]'>
                         <div className='px-8'>
                             <div className="font-Montserrat text-3xl md:text-6xl lg:text-7xl" data-swiper-parallax="-300">
-                                <span className='font-extrabold'>Best</span> Hotels
+                                <div className='App'>
+                                    <h1 style={{ paddingTop: '5rem', margin: 'auto 0', fontWeight: 'normal' }}>
+                                        Best{' '}
+                                        <span style={{ color: 'red', fontWeight: 'bold' }}>
+                                            {/* Style will be inherited from the parent element */}
+                                            <Typewriter
+                                                words={['Hotels', 'Shops', 'Places', 'Rooms!']}
+                                                loop={5}
+                                                cursor
+                                                cursorStyle=''
+                                                typeSpeed={70}
+                                                deleteSpeed={50}
+                                                delaySpeed={1000}
+                                                onLoopDone={handleDone}
+                                                onType={handleType}
+                                            />
+                                        </span>
+                                    </h1>
+                                </div>
                             </div>
                             <div className="text-sm font-Outfit mt-8" data-swiper-parallax="-200">
                                 Find Your<span className='font-extrabold'>Paradise</span>
@@ -79,7 +131,25 @@ const Banner = () => {
                     }} className='flex flex-col justify-center h-[400px] lg:h-[500px]'>
                         <div className='px-8'>
                             <div className="font-Montserrat  text-3xl md:text-6xl lg:text-7xl" data-swiper-parallax="-300">
-                                <span className='font-extrabold'>Asian</span> Islands
+                                <div className='App'>
+                                    <h1 style={{ paddingTop: '5rem', margin: 'auto 0', fontWeight: 'normal' }}>
+                                        Asian{' '}
+                                        <span style={{ color: 'red', fontWeight: 'bold' }}>
+                                            {/* Style will be inherited from the parent element */}
+                                            <Typewriter
+                                                words={['Islands', 'Villa', 'Luxury Home', 'Resort!']}
+                                                loop={5}
+                                                cursor
+                                                cursorStyle=''
+                                                typeSpeed={70}
+                                                deleteSpeed={50}
+                                                delaySpeed={1000}
+                                                onLoopDone={handleDone}
+                                                onType={handleType}
+                                            />
+                                        </span>
+                                    </h1>
+                                </div>
                             </div>
                             <div className="text-sm font-Outfit mt-8" data-swiper-parallax="-200">
                                 Tropical paradises, crystal-clear waters, lush jungles, and vibrant <br /> cultures. Explore nature's wonders and unwind.

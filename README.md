@@ -63,6 +63,9 @@ Clicking on a Country Card redirects users to a page displaying tourist spots of
 Dark/light theme toggle 
 
 
+* Used React tooltip on country card
+* used  react-simple-typewriter
+
 
 
 Client-side GitHub repository: [(Asin Escape hub Client)](https://github.com/programming-hero-web-course-4/B9A10-client-side-mk-munna)
