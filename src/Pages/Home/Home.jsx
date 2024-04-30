@@ -7,21 +7,14 @@ import WhyChooseUs from "../../Components/WhyChooseUs";
 // import Explore from "../../Components/Explore";
 
 const Home = () => {
-    useEffect(() => {
-        fetch("https://raw.githubusercontent.com/mk-munna/Luxy-Realty-Api/main/estates.json")
-            .then(res => res.json())
-            .then(data => {
-            console.log(data)
-        })
-    },[])
     return (
         <div>
             <Helmet>
                 <title>Asian Escape Hub | Home Page</title>
             </Helmet>
             <Banner></Banner>
-            <TouristSpots></TouristSpots>
             <WhyChooseUs></WhyChooseUs>
+            <TouristSpots></TouristSpots>
             {/* <Discounts2></Discounts2> */}
             {/* <Explore></Explore> */}
         </div>
