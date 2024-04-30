@@ -1,9 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types'
 export const DataContext = createContext(null)
-const DataContextProvider = ({children}) => {
+const DataContextProvider = ({ children }) => {
+    const themeFromLocalStorage = localStorage.getItem("theme")
+    const [theme, setTheme] = useState(themeFromLocalStorage);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [reloadAfterDelete, setReloadAfterDelete] = useState(false);
     useEffect(() => {
         fetch('http://localhost:5000/tourist-spots')
             .then(res => res.json())
@@ -11,8 +14,18 @@ const DataContextProvider = ({children}) => {
                 setData(data)
                 setLoading(false)
             })
-    }, [])
-    const dataInfo = {loading, data}
+    }, [reloadAfterDelete])
+    useEffect(() => {
+        if (theme) {
+            // save theme to local storage
+            localStorage.setItem("theme", "true");
+            document.querySelector("html").setAttribute("data-theme", "dark");
+        } else {
+            localStorage.removeItem("theme");
+            document.querySelector("html").setAttribute("data-theme", "light");
+        }
+    }, [theme])
+    const dataInfo = { loading, data, theme, setTheme, setReloadAfterDelete }
     return (
         <DataContext.Provider value={dataInfo}>
             {children}

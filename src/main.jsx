@@ -16,6 +16,7 @@ import AddTouristSpot from './Pages/AddTouristSpot/AddTouristSpot.jsx'
 import AllTouristSpot from './Pages/AllTouristSpot/AllTouristSpot.jsx'
 import DataContextProvider from './Provider/DataContextProvider.jsx'
 import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx'
+import MyList from './Pages/MyList/MyList.jsx'
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <PrivateRoute><Contact></Contact></PrivateRoute>
+      },
+      {
+        path: '/my-list',
+        element: <PrivateRoute><MyList></MyList></PrivateRoute>
       },
     ]
   }

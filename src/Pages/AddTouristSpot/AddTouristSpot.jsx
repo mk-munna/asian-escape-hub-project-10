@@ -4,10 +4,12 @@ import { AuthContext } from '../../Provider/AuthContextProvider';
 import Swal from 'sweetalert2';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import { DataContext } from '../../Provider/DataContextProvider';
 
 
 const AddTouristSpot = () => {
     const { user } = useContext(AuthContext)
+    const { setReloadAfterDelete } = useContext(DataContext)
     const [desc, setDesc] = useState('')
     // console.log(desc);
     const handleAddTouristSpot = (e) => {
@@ -43,6 +45,8 @@ const AddTouristSpot = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
+                    form.reset();
+                    setReloadAfterDelete(true)
                 }
         })
         
@@ -130,7 +134,6 @@ const AddTouristSpot = () => {
                         <textarea required onChange={(e) => setDesc(e.target.value)} placeholder='Write a short description about this tourist spot' className='border border-primary px-6 py-[10px] rounded-md focus:outline-none w-full  text-primary' name="" id="" cols="30" rows="4"></textarea>
                     </div>
                     <button
-                        data-aos="fade-in" data-aos-duration="1500" 
                         className="mt-6 block bg-primary disabled:bg-[#9fdf96] w-full select-none rounded-lg py-2 text-white">Add Tourist Spot</button>
                 </form>
             </div>

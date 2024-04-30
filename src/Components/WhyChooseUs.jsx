@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaInternetExplorer } from 'react-icons/fa6';
 import { LiaSolarPanelSolid } from 'react-icons/lia';
 import { MdBikeScooter } from 'react-icons/md';
 import { PiPaperPlaneTiltLight } from 'react-icons/pi';
+import { DataContext } from '../Provider/DataContextProvider';
 
 const WhyChooseUs = () => {
+    const { theme, } = useContext(DataContext)
+    console.log(theme);
     return (
-        <div className='flex flex-col gap-12 lg:gap-0 lg:flex-row px-6 bg-[#F3F8F6] py-32'>
+        <div className={`flex flex-col gap-12 lg:gap-0 lg:flex-row px-6 ${theme ? "bg-[#1e3641]" : "bg-[#F3F8F6]" }  py-32`}>
             <div className='w-full'>
                 <span className='px-5 rounded-lg text-base py-2 text-primary bg-[#E1EFE0] font-semibold'>why choose us</span>
                 <h1 className=' mt-10 md:leading-[58px] font-Montserrat font-bold text-3xl leading-10 md:text-5xl'>

@@ -93,13 +93,6 @@ const ViewDetails = () => {
                         <p>{short_description}</p>
                     </div>
                 </div>
-                <div className='my-12 pl-12 '>
-                    <h1 className='text-3xl font-Amaranth'>Related Products</h1>
-                    <div className='mt-12'>
-                        <div className='mt-10'>
-                        </div>
-                    </div>
-                </div>
             </div>
         );
 

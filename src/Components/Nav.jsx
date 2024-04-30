@@ -18,25 +18,16 @@ import { signOut } from "firebase/auth";
 import { auth } from "../Provider/firebase.config";
 import toast from "react-hot-toast";
 import { CiLight } from "react-icons/ci";
+import { DataContext } from "../Provider/DataContextProvider";
 
 
 const Nav = () => {
-    const themeFromLocalStorage = localStorage.getItem("theme")
-    const [theme, setTheme] = useState(themeFromLocalStorage);
+  const {theme, setTheme} = useContext(DataContext)
     // console.log(theme);
     const { user, loading } = useContext(AuthContext)
     const [myValue, setMyValue] = useState('');
     // console.log(myValue);
-    useEffect(() => {
-        if (theme) {
-            // save theme to local storage
-            localStorage.setItem("theme", "true");
-            document.querySelector("html").setAttribute("data-theme", "dark");
-        } else {
-            localStorage.removeItem("theme");
-            document.querySelector("html").setAttribute("data-theme", "light");
-        }
-    }, [theme])
+    
     const handleClick = () => {
         signOut(auth)
             .then(() => {
@@ -48,7 +39,7 @@ const Nav = () => {
     return (
         <div className='font-Outfit'>
             {/* top bar */}
-            <div className=" py-6">
+            <div className={`py-6 ${theme ? "bg-[#1f3b42]" : 'bg-[#EEFFF5]'}`}>
                 {/* content */}
                 <div className="lg:max-w-[1200px]  items-center md:max-w-screen-sm flex-col lg:flex-row md:flex-row gap-8 flex mx-auto">
                     <div className="flex flex-col gap-8 lg:flex-row md:flex-row">
@@ -56,7 +47,7 @@ const Nav = () => {
 
                         <label className=" border rounded-full md:w-[250px] lg:w-[300px] mx-auto px-4  h-10 flex items-center gap-2">
                             <Link to={'/login'}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg></Link>
-                            <input type="text" className="text-[12px] grow md:w-[120px] lg:w-[150px] focus:outline-none focus:border-none" placeholder="Search" />
+                            <input type="text" className={`text-[12px] grow md:w-[120px] lg:w-[150px] focus:outline-none focus:border-none ${theme ? "bg-[#18333a]" : "bg-[#EEFFF5]"}`} placeholder="Search" />
                             <select onChange={e => setMyValue(e.target.value)} className="h-9 border text-white text-[12px] rounded-full px-2  bg-[#0F172A]">
                                 <option value={"default"}>Country</option>
                                 <option>Bangladesh</option>
@@ -140,13 +131,13 @@ const Nav = () => {
                             }
                         </div>
                         <div className="flex items-center">
-                            <button className="md:text-[12px] lg:text-sm bg-primary text-white px-2 rounded-md">My List</button>
+                            <Link to={'/my-list'}><button className="md:text-[12px] lg:text-sm border px-2 rounded-md">My List</button></Link>
                         </div>
                     </div>
                 </div>
             </div>
             {/* nav bar */}
-            <div className=" bg-primary">
+            <div className={`${theme? "bg-[#182c33]" : "bg-primary"}`}>
                 <div className="lg:max-w-[1200px] navbar mx-auto">
                     <div className="navbar-center">
                         <div className="dropdown z-10">

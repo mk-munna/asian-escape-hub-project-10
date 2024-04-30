@@ -6,15 +6,12 @@ import { IoIosArrowRoundForward, IoIosTimer } from 'react-icons/io';
 import { IoLocationSharp, IoPeople } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
-import { useContext } from 'react';
-import { DataContext } from '../Provider/DataContextProvider';
+import 'aos/dist/aos.css';
 
 
-const Spot = ({ spot }) => {
-    const {theme} = useContext(DataContext)
+const SpotSmall = ({ spot }) => {
     const { _id, image, tourists_spot_name, country_Name, location, short_description, average_cost, seasonality, travel_time, totalVisitorsPerYear, user_name, user_email } = spot;
-    const maxTitleLength = 28
+    const maxTitleLength = 20
     let displayTitle = ''
     if (tourists_spot_name.length > maxTitleLength) {
         displayTitle = tourists_spot_name.slice(0, 16) + '...'
@@ -23,7 +20,7 @@ const Spot = ({ spot }) => {
     }
     return (
         <div data-aos="fade-up" data-aos-duration="1500" className=''>
-            <div className={`w-full bg-base-100 ${theme ? " border rounded-xl border-slate-700" : "shadow-xl"}   hover:scale-[1.01] duration-500 `}>
+            <div className="w-full bg-base-100 shadow-xl  hover:scale-[1.01] duration-500 ">
                 <figure className=" relative">
                     <img width={"100%"} src={image} className="rounded-xl" />
                     <span className={`absolute text-sm bg-primary px-2 py-[2px] rounded-md top-3 left-3 text-white font-Outfit`}>{seasonality}</span>
@@ -34,7 +31,7 @@ const Spot = ({ spot }) => {
                         <button className='bg-white hover:bg-primary hover:text-white  p-2 rounded-md text-lg'><span><BiCart></BiCart></span></button>
                     </div>
                 </figure>
-                <div className="card-body">
+                <div className=" p-6 space-y-3">
                     <h2 className="card-title text-xl font-OpenSans font-semibold ">{displayTitle}</h2>
                     <p className='flex items-center'>
                         <span className='text-primary'><IoLocationSharp></IoLocationSharp></span>
@@ -48,13 +45,13 @@ const Spot = ({ spot }) => {
                     <div className='flex'>
                         <p className='flex items-center'>
                             <span className='text-primary'><IoIosTimer /></span>
-                            <span className=' px-2 py-[2px] text-sm font-Outfit rounded-md'>{travel_time}</span>
+                            <span className=' px-2 py-[2px] text-[10px] font-Outfit rounded-md'>{travel_time}</span>
                         </p>
                         <p className='flex items-center'>
                             <span className='text-primary'><IoPeople /></span>
-                            <span className=' px-2 py-[2px] text-sm font-Outfit rounded-md'>{totalVisitorsPerYear}</span>
+                            <span className=' px-2 py-[2px] text-[10px] font-Outfit rounded-md'>{totalVisitorsPerYear}</span>
                         </p>
-                        
+
                     </div>
                     <div className='flex justify-end'>
                         <Link to={`/tourist-spot/${_id}`}><button className='text-sm flex items-center font-semibold'>View Details <IoIosArrowRoundForward /></button></Link>
@@ -65,7 +62,7 @@ const Spot = ({ spot }) => {
     );
 };
 
-Spot.propTypes = {
-    spot: PropTypes.object
+SpotSmall.propTypes = {
+    spotSmall: PropTypes.object
 };
-export default Spot;
+export default SpotSmall;
