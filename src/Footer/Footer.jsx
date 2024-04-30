@@ -7,7 +7,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div className='bg-[#1d2835]'>
-            <footer className="lg:max-w-6xl md:max-w-screen-sm max-w-[300px] lg:w-full mx-auto py-20">
+            <footer className="lg:max-w-6xl md:max-w-screen-sm max-w-[300px] lg:w-full mx-auto pb-10 pt-20">
                 <div className='footer text-white '>
                     <aside className=' space-y-3 w-[280px] justify-center lg:justify-start mx-auto '>
                         <div className='w-[250px] flex gap-2 items-center'>
@@ -99,6 +99,7 @@ const Footer = () => {
                     
                 </div>
             </footer>
+            <p className='text-white text-center mt-10 pb-10 text-[12px]'>Copyright@2024. All rights reserved</p>
 
         </div>
     );
