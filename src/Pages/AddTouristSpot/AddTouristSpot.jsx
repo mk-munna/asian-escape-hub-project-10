@@ -28,7 +28,7 @@ const AddTouristSpot = () => {
         const user_email = user.email;
         const newTouristSpot = { image, tourists_spot_name, country_Name, location, short_description, average_cost, seasonality, travel_time, totalVisitorsPerYear, user_name, user_email }
         // console.log(newTouristSpot);
-        fetch("http://localhost:5000/tourist-spot", {
+        fetch("https://asian-escape-server-7wg5vnwib-mk-monnas-projects.vercel.app/tourist-spot", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

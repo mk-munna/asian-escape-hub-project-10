@@ -6,7 +6,7 @@ import { Tooltip } from 'react-tooltip'
 const Country = () => {
     const [countries, setCountries] = useState(null)
     useEffect(() => {
-        fetch('http://localhost:5000/country')
+        fetch('https://asian-escape-server-7wg5vnwib-mk-monnas-projects.vercel.app/country')
             .then(res => res.json())
             .then(data => {
                 setCountries(data)

@@ -8,7 +8,7 @@ const DataContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [reloadAfterDelete, setReloadAfterDelete] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:5000/tourist-spots')
+        fetch('https://asian-escape-server-7wg5vnwib-mk-monnas-projects.vercel.app/tourist-spots')
             .then(res => res.json())
             .then(data => {
                 setData(data)

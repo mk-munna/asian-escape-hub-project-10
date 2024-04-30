@@ -33,7 +33,7 @@ const UpdateTouristSpot = () => {
         const totalVisitorsPerYear = form.totalVisitor.value;
         const newTouristSpot = { image, tourists_spot_name, country_Name, location, short_description, average_cost, seasonality, travel_time, totalVisitorsPerYear, }
         console.log(newTouristSpot);
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://asian-escape-server-7wg5vnwib-mk-monnas-projects.vercel.app/update/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

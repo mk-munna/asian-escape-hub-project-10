@@ -26,7 +26,7 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/touristSpot/${id}`, {
+                fetch(`https://asian-escape-server-7wg5vnwib-mk-monnas-projects.vercel.app/touristSpot/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
